@@ -2,20 +2,17 @@ import React, { memo } from 'react';
 // some icons unnecessary, fix later
 import {
 	Brain,
-	Briefcase,
 	Cpu,
 	FlaskConical,
 	FileText,
 	ArrowUpRight,
+	ArrowDown,
 	Code,
-	Activity,
-	Vote,
 	Bot,
 	Box,
 	ChartColumn,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { createLucideIcon } from 'lucide-react';
 
@@ -104,7 +101,7 @@ const ProjectCard = memo(({ project }) => {
 								style={{ backgroundColor: 'white', color: 'black' }}
 							>
 								{'Download File'}
-								<ArrowUpRight className="w-4 h-4 shrink-0" />
+								<ArrowDown className="w-4 h-4 shrink-0" />
 							</motion.a>
 						</div>
 					)}
