@@ -56,7 +56,7 @@ export default memo(function About() {
 			<div className="mx-auto w-full max-w-280 gap-8 px-4 pb-4 pt-8 md:grid md:grid-cols-2 md:items-start">
 				<div className="flex flex-col items-center md:justify-start md:self-start">
 					<img
-						src="/assets/ruel-sinha-resume-2026.jpg"
+						src="/assets/Ruel - Resume.jpg"
 						alt="Ruel Sinha"
 						className="w-full rounded-xl object-cover shadow-sm"
 					/>
@@ -114,7 +114,7 @@ export default memo(function About() {
 						</p>
 						<div className="mt-4">
 							<a
-								href="/assets/ruel-sinha-resume-2026.pdf"
+								href="/assets/Ruel - Resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-neutral-200 bg-white px-3.5 py-2.5 text-base font-bold text-black shadow-sm transition hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"

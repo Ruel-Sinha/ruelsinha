@@ -124,7 +124,7 @@ const WorkComponent = memo(function Projects() {
 
 				<motion.div variants={itemVariants} className="mt-12 mb-8">
 					<motion.a
-						href="/assets/ruel-sinha-resume-2026.pdf"
+						href="/assets/Ruel - Resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						whileHover={{ scale: 1.05 }}

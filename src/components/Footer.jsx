@@ -53,7 +53,7 @@ const Footer = memo(() => {
 						),
 					)}
 					<a
-						href="/assets/ruel-sinha-resume-2026.pdf"
+						href="/assets/Ruel - Resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110"
