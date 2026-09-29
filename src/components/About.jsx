@@ -1,6 +1,6 @@
 import { FileText, GraduationCap, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useMemo, memo, useState, useEffect } from 'react';
+import { memo, useState, useEffect } from 'react';
 
 const SHADOW = 'shadow-[3px_3px_0_0_#171717] dark:shadow-[3px_3px_0_0_#737373]';
 
