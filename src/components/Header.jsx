@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Menu, Home, GraduationCap, Music2, Heart, Briefcase, Sparkles, Mail, Users } from 'lucide-react';
+import { Sun, Moon, Menu, Home, GraduationCap, Music2, Sparkles} from 'lucide-react';
 
 import { Link, useLocation } from 'react-router-dom';
 
@@ -23,7 +23,6 @@ const navLinks = [
   // { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/work', label: 'Work' },
-  // { to: '/leadership', label: 'Leadership' },
   { to: '/music', label: 'Music' },
 ];
 
@@ -51,7 +50,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
     >
       <Link
         to="/"
-        className="text-2xl sm:text-3xl font-extrabold text-primary tracking-wide select-none hover:opacity-80 transition"
+        className="text-2xl sm:text-3xl font-bold text-primary tracking-wid select-none hover:opacity-80 transition"
       >
         Ruel Sinha
       </Link>
@@ -96,10 +95,9 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
         {[
           { to: '/about', Icon: Home, label: 'Home' },
           { to: '/academics', Icon: GraduationCap, label: 'Academics' },
-          { to: '/skills', Icon: Briefcase, label: 'Skills' },
+          // { to: '/skills', Icon: Briefcase, label: 'Skills' },
           { to: '/projects', Icon: Sparkles, label: 'Projects' },
           { to: '/work', Icon: Sparkles, label: 'Work' },
-          { to: '/leadership', Icon: Users, label: 'Leadership' },
           { to: '/music', Icon: Music2, label: 'Music' }
         ].map(({ to, Icon, label }) => {
            const isActive = location.pathname === to || (to === '/about' && location.pathname === '/');
@@ -108,7 +106,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
               key={to}
               to={to}
               aria-label={label}
-              className={`p-2 rounded-full transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex-shrink-0 ${
+              className={`p-2 rounded-full transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shrink-0 ${
                 isActive ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary'
               }`}
             >
@@ -116,11 +114,11 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
             </Link>
           );
         })}
-        <div className="w-px h-6 bg-border mx-1 flex-shrink-0" />
+        <div className="w-px h-6 bg-border mx-1 shrink-0" />
         <button
           onClick={handleThemeToggle}
           type="button"
-          className="p-2 rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer flex-shrink-0"
+          className="p-2 rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer shrink-0"
           aria-label={themeAriaLabel}
         >
           <ThemeIcon className="w-5 h-5" />
@@ -129,7 +127,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
           type="button"
           onClick={onHamburgerClick}
           aria-label="Open menu"
-          className="ml-0 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer flex-shrink-0"
+          className="ml-0 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer shrink-0"
         >
           <Menu className="w-6 h-6 text-primary" />
         </button>

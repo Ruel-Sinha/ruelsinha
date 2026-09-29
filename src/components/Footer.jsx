@@ -21,7 +21,7 @@ const socialLinks = [
 		title: 'GitHub',
 		label: 'GitHub',
 		isStatic: false,
-		href: 'https://github.com/ruwuuu'
+		href: 'https://github.com/Ruel-Sinha'
 	}
 ];
 

@@ -1,6 +1,6 @@
 import { useEffect, useCallback, memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { User, BrainCircuit, GraduationCap, FolderKanban, X, Handshake, Users, Music, ArrowUpRight } from 'lucide-react';
+import { User, BrainCircuit, GraduationCap, FolderKanban, X, Users, Music, ArrowUpRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
@@ -9,7 +9,6 @@ const navLinks = [
   // { to: '/skills', icon: BrainCircuit, text: 'Skills' },
   { to: '/projects', icon: FolderKanban, text: 'Projects' },
   { to: '/work', icon: FolderKanban, text: 'Work' },
-  // { to: '/leadership', icon: Users, text: 'Leadership' },
   { to: '/music', icon: Music, text: 'Music' },  
 ];
 
