@@ -9,7 +9,7 @@ const navLinks = [
   // { to: '/skills', icon: BrainCircuit, text: 'Skills' },
   { to: '/projects', icon: FolderKanban, text: 'Projects' },
   { to: '/work', icon: FolderKanban, text: 'Work' },
-  { to: '/music', icon: Music, text: 'Music' },  
+  // { to: '/music', icon: Music, text: 'Music' },
 ];
 
 const navVariants = {

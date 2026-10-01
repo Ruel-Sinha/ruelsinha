@@ -2,21 +2,16 @@ import React, { memo } from 'react';
 // some icons unnecessary, fix later
 import {
 	Briefcase,
-	Cpu,
-	FlaskConical,
+	BookOpenText,
 	FileText,
 	ArrowUpRight,
-	Code,
-	Activity,
 	Vote,
-	Bot,
-	Box,
-	ChartColumn,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { createLucideIcon } from 'lucide-react';
+
+const SHADOW = 'shadow-[6px_6px_0_0_#878787] dark:shadow-[6px_6px_0_0_#737373]';
 
 export const Integral = createLucideIcon('Integral', [
 	[
@@ -59,7 +54,8 @@ const WorkCard = memo(({ job }) => {
 	return (
 		<motion.div
 			variants={itemVariants}
-			className="bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow p-6 mb-6"
+			className={`bg-white/90 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-700 shadow p-6 mb-6 ${SHADOW}`}
+			whileHover={{ scale: 1.04, transition: { duration: 0.25 } }}
 		>
 			<div className="flex items-start gap-6">
 				<div className="w-16 h-16 shrink-0 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center shadow rounded-xl p-1 overflow-hidden text-neutral-700 dark:text-neutral-200">
@@ -81,16 +77,16 @@ WorkCard.displayName = 'WorkCard';
 
 const WORK_EXPERIENCE = [
 	{
+		title: 'VanTech Highschool - Math Tutor',
+		date: '2025 - 2026',
+		icon: <BookOpenText className="w-8 h-8" />,
+		summary: 'Selected by school to tutor junior students in Math and Physics',
+	},
+	{
 		title: 'Elections BC - Election Officer',
 		date: 'Oct 2024',
 		icon: <Vote className="w-8 h-8" />,
-		summary: 'Carried out voter registration and ballot processing.',
-	},
-	{
-		title: 'Robotiqa Technologies - Data Intern',
-		date: 'Summer 2024',
-		icon: <Briefcase className="w-8 h-8" />,
-		summary: 'Tested and validated automation software; logged defects & reproduced edge cases.',
+		summary: 'Guided voters and carried out ballot processing',
 	},
 ];
 
@@ -106,15 +102,11 @@ const WorkComponent = memo(function Projects() {
 				<motion.div variants={itemVariants} className="flex flex-col items-center text-center mb-12">
 					<h1 className="text-4xl sm:text-5xl font-bold text-center mb-4 flex items-center gap-4 text-foreground">
 						<Briefcase className="w-8 h-8 sm:w-11 sm:h-11 text-primary drop-shadow-sm" />
-						Work
+						Work Experience
 					</h1>
 				</motion.div>
 
 				<motion.div variants={itemVariants} className="flex flex-col items-center text-center w-full max-w-3xl">
-					<div className="flex items-center gap-2 mb-6 self-start">
-						<Briefcase className="w-6 h-6 text-primary" />
-						<h2 className="text-2xl font-bold text-foreground">Work Experience</h2>
-					</div>
 					<div className="w-full flex flex-col gap-2">
 						{WORK_EXPERIENCE.map((job, i) => (
 							<WorkCard key={i} job={job} />
@@ -127,10 +119,7 @@ const WorkComponent = memo(function Projects() {
 						href="/assets/Ruel - Resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.95 }}
-						className="inline-flex items-center justify-center whitespace-nowrap gap-2 px-8 py-3 bg-white text-black! rounded-full hover:bg-gray-200 transition-colors font-bold text-base shadow-lg cursor-pointer border border-neutral-200"
-						style={{ backgroundColor: 'white', color: 'black' }}
+						className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-blue-300 px-6 py-2.5 text-base font-bold text-black transition hover:bg-blue-500 dark:bg-blue-950 dark:text-white dark:hover:bg-blue-800"
 					>
 						<FileText className="w-5 h-5 shrink-0" />
 						View Resume

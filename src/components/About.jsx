@@ -109,7 +109,7 @@ export default memo(function About() {
 								href="/assets/Ruel - Resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-blue-300 px-6 py-2.5 text-base font-bold text-black transition hover:bg-blue-500 dark:bg-blue-950 dark:text-white dark:hover:bg-blue-800"
+								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-blue-200 px-6 py-2.5 text-base font-bold text-black transition hover:bg-blue-500 dark:bg-blue-950 dark:text-white dark:hover:bg-blue-800"
 							>
 								<FileText className="h-5 w-5 shrink-0" />
 								<span>Resume</span>
@@ -119,6 +119,8 @@ export default memo(function About() {
 					</motion.div>
 				</div>
 			</div>
+
+			{/* add timeline here */}
 
 			<AnimatePresence>
 				{zoomed && (

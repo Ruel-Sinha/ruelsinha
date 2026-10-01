@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, FileText, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { memo } from 'react';
 
 const socialLinks = [
@@ -10,18 +10,25 @@ const socialLinks = [
 		href: 'mailto:ruel.sinha.can@gmail.com'
 	},
 	{
-		icon: Phone,
-		title: 'Phone',
-		label: '+1 (236) 512-****',
-		isStatic: true,
-		href: "tel:+12365125602"
-	},
-	{
 		icon: Github,
 		title: 'GitHub',
 		label: 'GitHub',
 		isStatic: false,
 		href: 'https://github.com/Ruel-Sinha'
+	},
+	{
+		icon: Linkedin,
+		title: 'LinkedIn',
+		label: 'LinkedIn',
+		isStatic: false,
+		href: 'https://www.linkedin.com/in/ruel-sinha-21534a331'
+	},
+	{
+		icon: FileText,
+		title: 'Resume',
+		label: 'Resume',
+		isStatic: false,
+		href: '/assets/Ruel - Resume.pdf'
 	}
 ];
 
@@ -52,26 +59,6 @@ const Footer = memo(() => {
 							</a>
 						),
 					)}
-					<a
-						href="/assets/Ruel - Resume.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex items-center text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110"
-					>
-						<FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-						<span className="ml-2 hidden sm:inline">Resume</span>
-					</a>
-					<a
-						href="https://www.linkedin.com/in/ruel-sinha-21534a331"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex items-center text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110"
-						title="LinkedIn"
-						aria-label="LinkedIn"
-					>
-						<Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-						<span className="ml-2 hidden sm:inline">LinkedIn</span>
-					</a>
 				</div>
 			</div>
 		</footer>

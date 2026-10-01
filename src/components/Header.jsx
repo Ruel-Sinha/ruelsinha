@@ -45,7 +45,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-4 bg-muted/70 dark:bg-muted/50 backdrop-blur-md shadow-md border-b border-border/40"
+      className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-3 bg-muted/70 dark:bg-muted/50 backdrop-blur-md shadow-md border-b border-border/40"
       style={{ willChange: 'transform', transform: 'translate3d(0, 0, 0)' }}
     >
       <Link
@@ -98,7 +98,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
           // { to: '/skills', Icon: Briefcase, label: 'Skills' },
           { to: '/projects', Icon: Sparkles, label: 'Projects' },
           { to: '/work', Icon: Sparkles, label: 'Work' },
-          { to: '/music', Icon: Music2, label: 'Music' }
+          // { to: '/music', Icon: Music2, label: 'Music' }
         ].map(({ to, Icon, label }) => {
            const isActive = location.pathname === to || (to === '/about' && location.pathname === '/');
            return (

@@ -20,8 +20,8 @@ const AnimatedRoutes = memo(() => {
     { path: '/', Component: About },
     { path: '/about', Component: About },
     { path: '/academics', Component: Academics },
-    { path: '/music', Component: Music },
-    { path: '/skills', Component: Skills },
+    { path: '/music', Component: Music },           // need to revamp
+    { path: '/skills', Component: Skills },         // need to revamp
     { path: '/projects', Component: Projects },
     { path: '/work', Component: Work },
   ];
