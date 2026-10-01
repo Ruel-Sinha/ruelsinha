@@ -23,7 +23,7 @@ const navLinks = [
   // { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/work', label: 'Work' },
-  { to: '/music', label: 'Music' },
+  // { to: '/music', label: 'Music' },
 ];
 
 const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
