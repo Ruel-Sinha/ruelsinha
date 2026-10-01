@@ -1,11 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import {
 	Brain,
 	Cpu,
 	FlaskConical,
 	FileText,
 	ArrowUpRight,
-	ArrowDown,
 	Code,
 	Bot,
 	Box,
@@ -14,6 +13,7 @@ import {
 import { motion } from 'framer-motion';
 import 'katex/dist/katex.min.css';
 import { createLucideIcon } from 'lucide-react';
+import Multisnake from './Multisnake';
 
 export const Integral = createLucideIcon('Integral', [
 	[
@@ -53,7 +53,7 @@ const TechTag = memo(({ tag }) => (
 ));
 TechTag.displayName = 'TechTag';
 
-const ProjectCard = memo(({ project }) => {
+const ProjectCard = memo(({ project, onFileClick }) => {
 	const { title, date, summary, link, icon, file } = project;
 
 	return (
@@ -92,13 +92,14 @@ const ProjectCard = memo(({ project }) => {
 						<div className="mt-2 text-left">
 							<a
 								href={file}
-								download
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-[#d1d3e8] px-6 py-1.5 text-base font-bold text-black transition hover:bg-[#a8afff] dark:bg-[#41425c] dark:text-white dark:hover:bg-[#30314d]"
+								onClick={(e) => {
+									e.preventDefault();
+									onFileClick(file);
+								}}
+								className="inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border bg-[#d1d3e8] px-6 py-1.5 text-base font-bold text-black transition hover:bg-[#a8afff] dark:bg-[#41425c] dark:text-white dark:hover:bg-[#30314d]"
 							>
-								Download File
-								<ArrowDown className="h-5 w-5 shrink-0" />
+								View File
+								<ArrowUpRight className="h-5 w-5 shrink-0" />
 							</a>
 						</div>
 					)}
@@ -139,7 +140,7 @@ const SOFTWARE_ENGINEERING = [
 		date: '2023',
 		icon: <Box className="w-8 h-8" />,
 		summary: 'Programmed unique features using python\nEngineered optimzed code and runtime',
-		file: '/assets/projects/multisnake.py',
+		// file: '/assets/projects/multisnake.py',
 	},
 	{
 		title: 'Thumbnet (partner project)',
@@ -162,6 +163,8 @@ const SOFTWARE_ENGINEERING = [
 ];
 
 const ProjectsComponent = memo(function Projects() {
+	const [openFile, setOpenFile] = useState(null);
+
 	return (
 		<div className="w-full min-h-[80vh] flex flex-col items-center justify-center px-4 py-12 mt-2">
 			<motion.div
@@ -194,7 +197,7 @@ const ProjectsComponent = memo(function Projects() {
 					</div>
 					<div className="w-full flex flex-col gap-2">
 						{SOFTWARE_ENGINEERING.map((proj, i) => (
-							<ProjectCard key={i} project={proj} />
+							<ProjectCard key={i} project={proj} onFileClick={setOpenFile} />
 						))}
 					</div>
 					<div className="w-full mb-10 mt-5 h-px bg-neutral-900/20 dark:bg-white/20" />
@@ -207,7 +210,7 @@ const ProjectsComponent = memo(function Projects() {
 					</div>
 					<div className="w-full flex flex-col gap-2">
 						{ACADEMIC_PROJECTS.map((proj, i) => (
-							<ProjectCard key={i} project={proj} />
+							<ProjectCard key={i} project={proj} onFileClick={setOpenFile} />
 						))}
 					</div>
 					<div className="w-full mt-5 h-px bg-neutral-900/20 dark:bg-white/20" />
@@ -226,6 +229,8 @@ const ProjectsComponent = memo(function Projects() {
 					</a>
 				</motion.div>
 			</motion.div>
+
+			<Multisnake src={openFile} onClose={() => setOpenFile(null)} />
 		</div>
 	);
 });

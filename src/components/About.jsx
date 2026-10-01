@@ -46,15 +46,15 @@ export default memo(function About() {
 						transition={{ duration: 0.6 }}
 						className="flex flex-1 flex-col items-center md:items-start"
 					>
-						<div className={`mb-4 inline-flex items-center gap-2 border border-neutral-900 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-500 dark:bg-neutral-900/80 ${SHADOW}`}>
+						<div className={`mb-4 mt-4 inline-flex items-center gap-2 border border-neutral-900 bg-neutral-200/50 px-4 py-2 select-none dark:border-neutral-500 dark:bg-neutral-900/80 ${SHADOW}`}>
 							<div className="h-2 w-2 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
 							<span className="text-base font-semibold uppercase tracking-[0.05em] text-neutral-900 dark:text-neutral-100">
-								About me
+								About Me
 							</span>
 						</div>
 
 						<h1 className="mb-3 text-center text-2xl font-bold leading-tight text-neutral-900 md:text-left md:text-[1.75rem] dark:text-neutral-50">
-							<span className="bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-transparent dark:from-[#f2e2ff] dark:via-[#eeeaff] dark:to-[#f2e2ff]">I'm Ruel Sinha</span>
+							<span className="text-background-black dark:text-backgroud-white">I'm Ruel Sinha</span>
 						</h1>
 
 						<div className="mb-2 flex items-center justify-center gap-2 text-[0.9rem] leading-5 text-neutral-500 md:justify-start">

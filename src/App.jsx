@@ -52,7 +52,6 @@ function App() {
     if (storedTheme) return storedTheme;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
-  const [sideNavOpen, setSideNavOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark');
@@ -67,7 +66,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Layout theme={theme} toggleTheme={toggleTheme} sideNavOpen={sideNavOpen} setSideNavOpen={setSideNavOpen}>
+      <Layout theme={theme} toggleTheme={toggleTheme}>
         <AnimatedRoutes />
       </Layout>
 

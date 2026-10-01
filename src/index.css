@@ -131,15 +131,6 @@ a:not(.no-underline):hover::after {
   transition: color 0.2s ease-in-out;
 }
 
-/* ENHANCED ANCHOR LINK STABILITY */
-a[href^="#"] {
-  @apply inline-block opacity-100 visible transition-all duration-200;
-}
-
-a[href^="#"]:hover {
-  @apply transform translate-x-1;
-}
-
 /* ENHANCED SCROLLBAR STYLING */
 ::-webkit-scrollbar {
   @apply w-2;

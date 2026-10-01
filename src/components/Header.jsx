@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Menu, Home, GraduationCap, Music2, Sparkles} from 'lucide-react';
+import { Sun, Moon, Menu, Home, GraduationCap, Music2, FolderKanban, BriefcaseBusiness} from 'lucide-react';
 
 import { Link, useLocation } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const navLinks = [
   // { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/work', label: 'Work' },
-  // { to: '/music', label: 'Music' },
+  // { to: '/music', label: 'Music' }
 ];
 
 const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
@@ -45,7 +45,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-3 bg-muted/70 dark:bg-muted/50 backdrop-blur-md shadow-md border-b border-border/40"
+      className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 py-2.5 bg-muted/70 dark:bg-muted/50 backdrop-blur-md shadow-md border-b border-border/40"
       style={{ willChange: 'transform', transform: 'translate3d(0, 0, 0)' }}
     >
       <Link
@@ -55,14 +55,14 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
         Ruel Sinha
       </Link>
 
-      <nav className="hidden min-[935px]:flex gap-2 sm:gap-4 md:gap-6 items-center">
+      <nav className="hidden min-[535px]:flex gap-2 sm:gap-4 md:gap-6 items-center">
         {navLinks.map((link) => {
           const isActive = location.pathname === link.to || (link.to === '/about' && location.pathname === '/');
           return (
             <Link
               key={link.to}
               to={link.to}
-              className={`px-3 py-1.5 rounded-md text-base font-medium transition-colors duration-150
+              className={`px-3 py-1.5 rounded-sm text-base font-medium transition-colors duration-150
                 ${
                   isActive
                     ? 'text-primary bg-primary/10 dark:bg-primary/20'
@@ -76,28 +76,20 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
         <button
           onClick={handleThemeToggle}
           type="button"
-          className="ml-0 p-2 rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer"
+          className="ml-0 p-2 rounded-sm text-muted-foreground hover:text-primary transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
           aria-label={themeAriaLabel}
         >
           <ThemeIcon className="w-6 h-6" />
         </button>
-        <button
-          type="button"
-          onClick={onHamburgerClick}
-          aria-label="Open menu"
-          className="ml-1 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer"
-        >
-          <Menu className="w-6 h-6 text-primary" />
-        </button>
       </nav>
 
-      <div className="max-[934px]:flex hidden items-center gap-1 overflow-x-auto no-scrollbar mask-gradient pr-2">
+      <div className="max-[534px]:flex hidden items-center gap-1 overflow-x-auto no-scrollbar mask-gradient pr-2">
         {[
           { to: '/about', Icon: Home, label: 'Home' },
           { to: '/academics', Icon: GraduationCap, label: 'Academics' },
           // { to: '/skills', Icon: Briefcase, label: 'Skills' },
-          { to: '/projects', Icon: Sparkles, label: 'Projects' },
-          { to: '/work', Icon: Sparkles, label: 'Work' },
+          { to: '/projects', Icon: FolderKanban, label: 'Projects' },
+          { to: '/work', Icon: BriefcaseBusiness, label: 'Work' },
           // { to: '/music', Icon: Music2, label: 'Music' }
         ].map(({ to, Icon, label }) => {
            const isActive = location.pathname === to || (to === '/about' && location.pathname === '/');
@@ -106,7 +98,7 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
               key={to}
               to={to}
               aria-label={label}
-              className={`p-2 rounded-full transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shrink-0 ${
+              className={`p-2 rounded-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shrink-0 ${
                 isActive ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary'
               }`}
             >
@@ -118,18 +110,10 @@ const Header = memo(({ toggleTheme, currentTheme, onHamburgerClick }) => {
         <button
           onClick={handleThemeToggle}
           type="button"
-          className="p-2 rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer shrink-0"
+          className="p-2 rounded-sm text-muted-foreground hover:text-primary transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer shrink-0"
           aria-label={themeAriaLabel}
         >
           <ThemeIcon className="w-5 h-5" />
-        </button>
-        <button
-          type="button"
-          onClick={onHamburgerClick}
-          aria-label="Open menu"
-          className="ml-0 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 will-change-transform cursor-pointer shrink-0"
-        >
-          <Menu className="w-6 h-6 text-primary" />
         </button>
       </div>
     </motion.header>
